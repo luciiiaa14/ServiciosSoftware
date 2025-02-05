@@ -1,1 +1,97 @@
-{"clientes":[{"dni":"12345678X","nombre":"Juan Ortega","email":"juan@correo.com","seguros":[{"type":"franquicia","id":"AAA-123456","vehiculo":{"matricula":"PLL9597","cv":75,"profesional":false},"franquicia":100.0,"fecha":"2001-12-31"}]},{"dni":"12345678F","nombre":"Pablo Prieto","email":"pablo@correo.com","seguros":[{"type":"todoRiesgo","id":"BBB-123456","vehiculo":{"matricula":"PLX9597","cv":105,"profesional":true},"fecha":"2020-09-01"},{"type":"terceros","id":"CCC-123456","vehiculo":{"matricula":"PLX9797","cv":60,"profesional":false},"fecha":"2022-07-15"}],"partes":[{"seguro":"BBB-123456","importe":350.0,"fecha":"2021-12-31","id":1},{"seguro":"CCC-123456","importe":350.0,"fecha":"2023-05-15","id":2}]},{"dni":"12345678V","nombre":"Ana Rodriguez","email":"ana@correo.com","seguros":[{"type":"todoRiesgo","id":"CCC-324564","vehiculo":{"matricula":"JLL9551","cv":150,"profesional":true},"fecha":"2014-03-01"}]},{"dni":"72350115G","nombre":"pepin","email":"pepin@gmail.com","seguros":[{"type":"terceros","id":"AAA-1111","vehiculo":{"matricula":"12345-SA","cv":200,"profesional":false},"fecha":"2025-02-05"}]}]}
+{
+    "clientes": [
+        {
+            "dni": "12345678X",
+            "nombre": "Juan Ortega",
+            "email": "juan@correo.com",
+            "seguros": [
+                {
+                    "type": "franquicia",
+                    "id": "AAA-123456",
+                    "vehiculo": {
+                        "matricula": "PLL9597",
+                        "cv": 75,
+                        "profesional": false
+                    },
+                    "franquicia": 100.0,
+                    "fecha": "2001-12-31"
+                }
+            ]
+        },
+        {
+            "dni": "12345678F",
+            "nombre": "Pablo Prieto",
+            "email": "pablo@correo.com",
+            "seguros": [
+                {
+                    "type": "todoRiesgo",
+                    "id": "BBB-123456",
+                    "vehiculo": {
+                        "matricula": "PLX9597",
+                        "cv": 105,
+                        "profesional": true
+                    },
+                    "fecha": "2020-09-01"
+                },
+                {
+                    "type": "terceros",
+                    "id": "CCC-123456",
+                    "vehiculo": {
+                        "matricula": "PLX9797",
+                        "cv": 60,
+                        "profesional": false
+                    },
+                    "fecha": "2022-07-15"
+                }
+            ],
+            "partes": [
+                {
+                    "seguro": "BBB-123456",
+                    "importe": 350.0,
+                    "fecha": "2021-12-31",
+                    "id": 1
+                },
+                {
+                    "seguro": "CCC-123456",
+                    "importe": 350.0,
+                    "fecha": "2023-05-15",
+                    "id": 2
+                }
+            ]
+        },
+        {
+            "dni": "12345678V",
+            "nombre": "Ana Rodriguez",
+            "email": "ana@correo.com",
+            "seguros": [
+                {
+                    "type": "todoRiesgo",
+                    "id": "CCC-324564",
+                    "vehiculo": {
+                        "matricula": "JLL9551",
+                        "cv": 150,
+                        "profesional": true
+                    },
+                    "fecha": "2014-03-01"
+                }
+            ]
+        },
+        {
+            "dni": "72350115G",
+            "nombre": "pepin",
+            "email": "pepin@gmail.com",
+            "seguros": [
+                {
+                    "type": "terceros",
+                    "id": "AAA-1111",
+                    "vehiculo": {
+                        "matricula": "12345-SA",
+                        "cv": 200,
+                        "profesional": false
+                    },
+                    "fecha": "2025-02-05"
+                }
+            ]
+        }
+    ]
+}

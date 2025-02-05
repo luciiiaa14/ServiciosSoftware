@@ -3,14 +3,18 @@ package es.unican.ss.Practica1.domain;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @SuppressWarnings({ "serial" })
 public abstract class Seguro implements Serializable {
 	
 	public static final double AUMENTO_PROFESIONAL = 100.0;
 	public static final double MULTIPLICADOR_POTENCIA = 1.5;
-	
+	@JsonProperty("id")
 	private String id;
+	@JsonProperty("fecha")
 	private LocalDate fechaInicio;
+	@JsonProperty("vehiculo")
 	private Vehiculo vehiculo;
 	private double precioBase;
 	

@@ -4,13 +4,23 @@ import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
+
 @SuppressWarnings({ "serial" })
 public class Cliente implements Serializable {
 	
+	@JsonProperty("dni")
 	private String dni;
+	@JsonProperty("nombre")
 	private String nombre;
+	@JsonProperty("email")
 	private String email;
+	@JsonUnwrapped
+	@JsonProperty("seguro")
 	private List<Seguro> seguros = new LinkedList<Seguro>();
+	@JsonUnwrapped
+	@JsonProperty("parte")
 	private List<Parte> partes = new LinkedList<Parte>();
 
 	public Cliente() {
