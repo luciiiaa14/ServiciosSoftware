@@ -4,6 +4,11 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import es.unican.ss.Practica1.seralizacion.CustomLocalDateDeserializer;
+import es.unican.ss.Practica1.seralizacion.CustomLocalDateSerializer;
 
 @SuppressWarnings({ "serial" })
 public class Parte implements Serializable {
@@ -14,6 +19,9 @@ public class Parte implements Serializable {
 	private Seguro seguro;
 	@JsonProperty("importe")
 	private double importe;
+	
+	@JsonSerialize(using=CustomLocalDateSerializer.class)
+	@JsonDeserialize(using=CustomLocalDateDeserializer.class)
 	@JsonProperty("fecha")
 	private LocalDate fecha;
 	

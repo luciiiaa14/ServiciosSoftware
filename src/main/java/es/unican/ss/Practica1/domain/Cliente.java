@@ -16,11 +16,9 @@ public class Cliente implements Serializable {
 	private String nombre;
 	@JsonProperty("email")
 	private String email;
-	@JsonUnwrapped
-	@JsonProperty("seguro")
+	@JsonProperty("seguros")
 	private List<Seguro> seguros = new LinkedList<Seguro>();
-	@JsonUnwrapped
-	@JsonProperty("parte")
+	@JsonProperty("partes")
 	private List<Parte> partes = new LinkedList<Parte>();
 
 	public Cliente() {

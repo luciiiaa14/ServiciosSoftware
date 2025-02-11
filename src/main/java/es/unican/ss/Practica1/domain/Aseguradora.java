@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 @SuppressWarnings({ "serial" })
 public class Aseguradora implements Serializable{
-	@JsonProperty("cliente")
-	@JsonUnwrapped
+	@JsonProperty("clientes")
 	private List<Cliente> clientes=new LinkedList<Cliente>();
 	
 	public Aseguradora(){}
