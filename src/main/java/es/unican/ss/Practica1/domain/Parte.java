@@ -13,9 +13,9 @@ import es.unican.ss.Practica1.seralizacion.CustomLocalDateSerializer;
 @SuppressWarnings({ "serial" })
 public class Parte implements Serializable {
 	
-	
+	@JsonProperty("id")
 	private Integer idParte;
-	@JsonProperty("seguroRef")
+	@JsonProperty("seguro")
 	private Seguro seguro;
 	@JsonProperty("importe")
 	private double importe;

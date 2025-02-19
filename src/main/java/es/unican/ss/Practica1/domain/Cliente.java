@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
@@ -18,6 +20,7 @@ public class Cliente implements Serializable {
 	private String email;
 	@JsonProperty("seguros")
 	private List<Seguro> seguros = new LinkedList<Seguro>();
+	@JsonInclude(value=Include.NON_EMPTY)
 	@JsonProperty("partes")
 	private List<Parte> partes = new LinkedList<Parte>();
 

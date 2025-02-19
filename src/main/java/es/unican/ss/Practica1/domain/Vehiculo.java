@@ -11,7 +11,7 @@ public class Vehiculo implements Serializable{
 	private String matricula;
 	@JsonProperty("cv")
 	private int cv;
-	@JsonProperty("esProfesional")
+	@JsonProperty("profesional")
 	private boolean esProfesional;
 	
 	public Vehiculo(String mat, int cv, boolean esPro){

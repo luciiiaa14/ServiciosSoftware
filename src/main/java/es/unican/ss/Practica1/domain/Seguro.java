@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
@@ -43,7 +44,7 @@ public abstract class Seguro implements Serializable {
 
 	@JsonProperty("vehiculo")
 	private Vehiculo vehiculo;
-	
+	@JsonIgnore
 	private double precioBase;
 	
 	public Seguro(){
