@@ -2,6 +2,9 @@ package es.unican.ss.Practica1.domain;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 @SuppressWarnings({ "serial" })
 public class TRFranquicia extends Seguro implements Serializable {
 	

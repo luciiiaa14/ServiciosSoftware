@@ -3,23 +3,38 @@ package es.unican.ss.Practica1.domain;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import es.unican.ss.Practica1.seralizacion.CustomLocalDateDeserializer;
 import es.unican.ss.Practica1.seralizacion.CustomLocalDateSerializer;
+import es.unican.ss.Practica1.seralizacion.LocalDateAdapterXML;
 
+@XmlRootElement(name = "parte")
+@XmlAccessorType(XmlAccessType.FIELD)
 @SuppressWarnings({ "serial" })
 public class Parte implements Serializable {
-	
+	@XmlAttribute(name = "id", required = true)
 	@JsonProperty("id")
 	private Integer idParte;
+	
+	@XmlElement(name = "seguroRef", required = true)
 	@JsonProperty("seguro")
-	private Seguro seguro;
+	private String seguro;
+	@XmlAttribute(required = true)
 	@JsonProperty("importe")
 	private double importe;
-	
+	@XmlJavaTypeAdapter(LocalDateAdapterXML.class)
+	@XmlAttribute(required = true)
 	@JsonSerialize(using=CustomLocalDateSerializer.class)
 	@JsonDeserialize(using=CustomLocalDateDeserializer.class)
 	@JsonProperty("fecha")
@@ -28,7 +43,7 @@ public class Parte implements Serializable {
 	public Parte () {
 	}
 
-	public Parte(Seguro seguro, double importe, LocalDate fecha, Integer idParte) {
+	public Parte(String seguro, double importe, LocalDate fecha, Integer idParte) {
 		super();
 		this.seguro = seguro;
 		this.importe = importe;
@@ -48,11 +63,11 @@ public class Parte implements Serializable {
 		return idParte;
 	}
 	
-	public Seguro getSeguro() {
+	public String getSeguro() {
 		return seguro;
 	}
 
-	public void setSeguro(Seguro seguro) {
+	public void setSeguro(String seguro) {
 		this.seguro = seguro;
 	}
 

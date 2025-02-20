@@ -3,6 +3,9 @@ package es.unican.ss.Practica1.domain;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "TodoRiesgo")
 @SuppressWarnings({ "serial" })
 public class TodoRiesgo extends Seguro implements Serializable{
 	

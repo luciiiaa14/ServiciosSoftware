@@ -1,27 +1,46 @@
 package es.unican.ss.Practica1.domain;
 
 import java.io.Serializable;
+
+
 import java.util.LinkedList;
 import java.util.List;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElements;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
+@XmlRootElement(name = "cliente")
+@XmlAccessorType(XmlAccessType.FIELD)
 @SuppressWarnings({ "serial" })
 public class Cliente implements Serializable {
-	
+	@XmlAttribute(required = true)
 	@JsonProperty("dni")
 	private String dni;
+	@XmlAttribute(required = true)
 	@JsonProperty("nombre")
 	private String nombre;
+	@XmlAttribute(required = true)
 	@JsonProperty("email")
 	private String email;
+	@XmlElements({
+		@XmlElement(name="Terceros", type = Terceros.class),
+		@XmlElement(name="TodoRiesgo", type = TodoRiesgo.class),
+		@XmlElement(name="TRFranquicia", type = TRFranquicia.class)
+	})
 	@JsonProperty("seguros")
 	private List<Seguro> seguros = new LinkedList<Seguro>();
 	@JsonInclude(value=Include.NON_EMPTY)
 	@JsonProperty("partes")
+	@XmlElement(name = "parte", required = false)
 	private List<Parte> partes = new LinkedList<Parte>();
 
 	public Cliente() {

@@ -1,7 +1,17 @@
 package es.unican.ss.Practica1.domain;
 
 import java.io.Serializable;
+
 import java.time.LocalDate;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -13,11 +23,16 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import es.unican.ss.Practica1.seralizacion.CustomLocalDateDeserializer;
 import es.unican.ss.Practica1.seralizacion.CustomLocalDateSerializer;
+import es.unican.ss.Practica1.seralizacion.LocalDateAdapterXML;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.fasterxml.jackson.annotation.ObjectIdGenerator;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+
+@XmlSeeAlso({Terceros.class, TodoRiesgo.class, TRFranquicia.class})
+@XmlAccessorType(XmlAccessType.FIELD)
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, 
 				include= JsonTypeInfo.As.PROPERTY,
 				property = "type")
@@ -36,14 +51,19 @@ public abstract class Seguro implements Serializable {
 	public static final double AUMENTO_PROFESIONAL = 100.0;
 	public static final double MULTIPLICADOR_POTENCIA = 1.5;
 	@JsonProperty("id")
+	@XmlAttribute(required = true)
 	private String id;
+	@XmlJavaTypeAdapter(LocalDateAdapterXML.class)
+	@XmlAttribute(name = "fecha",required = true)
 	@JsonProperty("fecha")
 	@JsonSerialize(using=CustomLocalDateSerializer.class)
 	@JsonDeserialize(using=CustomLocalDateDeserializer.class)
 	private LocalDate fechaInicio;
 
+	@XmlElement(name = "vehiculo", required = true)
 	@JsonProperty("vehiculo")
 	private Vehiculo vehiculo;
+	@XmlAttribute(name="precioBase", required = true)
 	@JsonIgnore
 	private double precioBase;
 	

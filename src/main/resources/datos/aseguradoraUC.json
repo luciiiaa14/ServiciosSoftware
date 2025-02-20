@@ -92,6 +92,42 @@
                     }
                 }
             ]
+        },
+        {
+            "dni": "76522112L",
+            "nombre": "Jorge Garrido G",
+            "email": "jgg@unican.es",
+            "seguros": [
+                {
+                    "type": "terceros",
+                    "id": "23",
+                    "fecha": "2024-09-10",
+                    "vehiculo": {
+                        "matricula": "KKY2233",
+                        "cv": 90,
+                        "profesional": true
+                    }
+                },
+                {
+                    "type": "franquicia",
+                    "id": "24",
+                    "franquicia": 123.0,
+                    "fecha": "2022-12-01",
+                    "vehiculo": {
+                        "matricula": "LSC1233",
+                        "cv": 110,
+                        "profesional": false
+                    }
+                }
+            ],
+            "partes": [
+                {
+                    "id": 2,
+                    "seguro": "23",
+                    "importe": 1000.0,
+                    "fecha": "2024-12-30"
+                }
+            ]
         }
     ]
 }
