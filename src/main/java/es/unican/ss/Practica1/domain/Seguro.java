@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
@@ -30,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.fasterxml.jackson.annotation.ObjectIdGenerator;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-
+@XmlType(name="Seguro")
 @XmlSeeAlso({Terceros.class, TodoRiesgo.class, TRFranquicia.class})
 @XmlAccessorType(XmlAccessType.FIELD)
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, 
@@ -51,6 +52,7 @@ public abstract class Seguro implements Serializable {
 	public static final double AUMENTO_PROFESIONAL = 100.0;
 	public static final double MULTIPLICADOR_POTENCIA = 1.5;
 	@JsonProperty("id")
+	@XmlID
 	@XmlAttribute(required = true)
 	private String id;
 	@XmlJavaTypeAdapter(LocalDateAdapterXML.class)

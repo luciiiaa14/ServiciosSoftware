@@ -3,8 +3,9 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement
+@XmlType(name="TRFranquicia")
 @SuppressWarnings({ "serial" })
 public class TRFranquicia extends Seguro implements Serializable {
 	

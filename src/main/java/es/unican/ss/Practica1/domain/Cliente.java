@@ -31,11 +31,7 @@ public class Cliente implements Serializable {
 	@XmlAttribute(required = true)
 	@JsonProperty("email")
 	private String email;
-	@XmlElements({
-		@XmlElement(name="Terceros", type = Terceros.class),
-		@XmlElement(name="TodoRiesgo", type = TodoRiesgo.class),
-		@XmlElement(name="TRFranquicia", type = TRFranquicia.class)
-	})
+	@XmlElement(name="seguro")
 	@JsonProperty("seguros")
 	private List<Seguro> seguros = new LinkedList<Seguro>();
 	@JsonInclude(value=Include.NON_EMPTY)

@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
@@ -26,10 +27,10 @@ public class Parte implements Serializable {
 	@XmlAttribute(name = "id", required = true)
 	@JsonProperty("id")
 	private Integer idParte;
-	
+	@XmlIDREF
 	@XmlElement(name = "seguroRef", required = true)
 	@JsonProperty("seguro")
-	private String seguro;
+	private Seguro seguro;
 	@XmlAttribute(required = true)
 	@JsonProperty("importe")
 	private double importe;
@@ -43,7 +44,7 @@ public class Parte implements Serializable {
 	public Parte () {
 	}
 
-	public Parte(String seguro, double importe, LocalDate fecha, Integer idParte) {
+	public Parte(Seguro seguro, double importe, LocalDate fecha, Integer idParte) {
 		super();
 		this.seguro = seguro;
 		this.importe = importe;
@@ -63,11 +64,11 @@ public class Parte implements Serializable {
 		return idParte;
 	}
 	
-	public String getSeguro() {
+	public Seguro getSeguro() {
 		return seguro;
 	}
 
-	public void setSeguro(String seguro) {
+	public void setSeguro(Seguro seguro) {
 		this.seguro = seguro;
 	}
 

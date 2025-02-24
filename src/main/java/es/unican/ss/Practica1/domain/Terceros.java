@@ -3,9 +3,12 @@ package es.unican.ss.Practica1.domain;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement
+
+
+
+@XmlType(name="Terceros")
 @SuppressWarnings({ "serial" })
 public class Terceros extends Seguro implements Serializable{
 	

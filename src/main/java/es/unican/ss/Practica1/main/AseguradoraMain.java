@@ -45,7 +45,7 @@ public class AseguradoraMain {
 	        
 			Cliente c5 = new Cliente("76522112L", "Jorge Garrido G", "jgg@unican.es");
 			
-			Parte p1 = new Parte(s1.getId(), 1000.0, LocalDate.of(2024, 12, 30), 2);
+			Parte p1 = new Parte(s1, 1000.0, LocalDate.of(2024, 12, 30), 2);
 			List<Parte> partes = new ArrayList<Parte>();
 			partes.add(p1);
 			c5.anadeSeguro(s1);

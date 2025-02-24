@@ -4,8 +4,9 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement(name = "TodoRiesgo")
+@XmlType(name="TodoRiesgo")
 @SuppressWarnings({ "serial" })
 public class TodoRiesgo extends Seguro implements Serializable{
 	
