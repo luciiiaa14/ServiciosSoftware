@@ -77,7 +77,7 @@ public class AseguradoraMainXML {
 		// Serialización a XML
 		try {
 			marshaller = jaxbContext.createMarshaller();
-			marshaller.marshal(aseguradora1, new File("aseguradoraXML.xml"));
+			marshaller.marshal(aseguradora1, new File("C:\\Users\\lucia\\OneDrive\\Escritorio\\SERVICIOS\\Practica1\\src\\main\\resources\\datos\\aseguradoraXML.xml"));
 			
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
